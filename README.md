@@ -1,5 +1,15 @@
 # yolov11Projects
-
+盘点yolov11的基本操作,对应基本操作在对应文件夹中：
+* 检测
+* 分段
+* 分类
+* 识别
+* 姿势
+* obb
+以及opencv 处理视频，图片的基本操作
+yolov11进阶解决方案：
+* 物体计数
+* 
 <https://docs.ultralytics.com/quickstart/>
 
 # 环境配置

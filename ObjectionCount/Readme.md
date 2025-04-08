@@ -36,4 +36,4 @@ result = Objection_detect_area(img,[(20, 400), (1080, 400)],model_name)
 cv2.imwrite("output.jpg",result.plot_im)
 ```
 4.效果
-[!image]<output.jpg>
+![image](output.jpg)

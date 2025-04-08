@@ -109,4 +109,20 @@ for result in results:
     names = [result.names[cls.item()] for cls in result.boxes.cls.int()]  # class name of each box
     confs = result.boxes.conf  # confidence score of each box
 ```
+# 设置参数训练模型
 
+```
+results = model.train(data='coco8.yaml',epochs=100) # 这里调用coco8的现有数据库
+```
+# 评估模型准确率
+```
+metrics = model.val()  # no arguments needed, dataset and settings remembered
+metrics.box.map  # map50-95
+metrics.box.map50  # map50
+metrics.box.map75  # map75
+metrics.box.maps  # a list contains map50-95 of each category
+```
+# 导出模型
+```
+model.export(format="njdwa.pt")
+```

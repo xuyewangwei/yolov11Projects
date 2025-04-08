@@ -39,3 +39,6 @@ cv2.imwrite("output.jpg",result.plot_im)
 
 
 ![image](output.jpg)
+
+# 同理可以应用在视频上
+将图片每一帧截取出来运行函数就行

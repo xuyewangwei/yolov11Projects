@@ -125,6 +125,7 @@ metrics.box.maps  # a list contains map50-95 of each category
 # 导出模型
 ```
 model.export(format="engine", int8=True) # 创建engine文件
+model.export(format="onnx") # 创建onnx文件
 ```
 
 # 使用engine文件
@@ -134,3 +135,26 @@ tensorrt_model = YOLO("yolo11n.engine")
 
 results = tensorrt_model("https://ultralytics.com/images/bus.jpg")
 ```
+
+```
+# Load the exported ONNX model
+onnx_model = YOLO("yolo11n.onnx")
+results = onnx_model("https://ultralytics.com/images/bus.jpg")
+```
+# 两种文件的不同
+<http://docs.ultralytics.com/zh/integrations/onnx/#cpu-deployment>
+<https://docs.ultralytics.com/zh/integrations/tensorrt/#usage>
+ONNX 模型通常用于 CPU，但也可部署在以下平台上：
+
+GPU 加速：ONNX 完全支持GPU 加速，尤其是NVIDIA CUDA 。这样就能在NVIDIA GPU 上高效执行需要高计算能力的任务。
+
+边缘和移动设备：ONNX 可扩展到边缘和移动设备，非常适合在设备上进行实时推理。它重量轻，与边缘硬件兼容。
+
+网络浏览器：ONNX 可直接在网络浏览器中运行，为基于网络的交互式动态人工智能应用提供动力。
+
+使用YOLO 和TensorRT INT8 的优势
+减少模型大小：从 FP32 到 INT8 的量化可将模型大小减少 4 倍（在磁盘或内存中），从而加快下载速度，降低存储要求，并在部署模型时减少内存占用。
+
+功耗更低：与 FP32 模型相比，INT8 导出的YOLO 模型降低了精度操作，因此功耗更低，尤其适用于电池供电的设备。
+
+提高推理速度： TensorRT 可针对目标硬件优化模型，从而提高 GPU、嵌入式设备和加速器的推理速度。

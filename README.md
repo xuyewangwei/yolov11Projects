@@ -124,5 +124,13 @@ metrics.box.maps  # a list contains map50-95 of each category
 ```
 # 导出模型
 ```
-model.export(format="njdwa.pt")
+model.export(format="engine", int8=True) # 创建engine文件
+```
+
+# 使用engine文件
+```
+# Load the exported TensorRT model
+tensorrt_model = YOLO("yolo11n.engine")
+
+results = tensorrt_model("https://ultralytics.com/images/bus.jpg")
 ```

@@ -1,6 +1,6 @@
-train: /home/ubuntu/ultralytics/datasets/mycoco/images/train  # train images
-val: /home/ubuntu/ultralytics/datasets/mycoco/images/val  # val images
-test: /home/ubuntu/ultralytics/datasets/mycoco/images/test  # test images （可选）
+train: img/train  # train images
+val: img/val  # val images
+test: img/test  # test images （可选）
 
 # number of classes
 nc: 1
